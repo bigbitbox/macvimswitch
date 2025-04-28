@@ -1,0 +1,23 @@
+name: Build macOS App
+
+on:
+  push: # Trigger on pushes to any branch
+    branches: [ main ] # Adjust if your main branch has a different name
+  workflow_dispatch: # Allows manual triggering from the Actions tab
+
+jobs:
+  build:
+    runs-on: macos-latest # Use the latest available macOS runner
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4 # Action to get your code
+
+    - name: Build the application
+      run: bash build.sh # Execute your build script
+
+    - name: Upload artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: MacVimSwitch-App # Name of the artifact zip file
+        path: dist/MacVimSwitch.app # Path to the compiled .app bundle 

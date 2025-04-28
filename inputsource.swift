@@ -184,7 +184,7 @@ class KeyboardManager {
     static let shared = KeyboardManager()
     weak var delegate: KeyboardManagerDelegate?  // 添加代理属性
     private var eventTap: CFMachPort?
-    let abcInputSource = "com.apple.keylayout.ABC"
+    let abcInputSource = "com.apple.keylayout.UnicodeHexInput"
     var useShiftSwitch: Bool {
         get { UserPreferences.shared.useShiftSwitch }
         set {
