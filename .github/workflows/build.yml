@@ -14,10 +14,10 @@ jobs:
       uses: actions/checkout@v4 # Action to get your code
 
     - name: Build the application
-      run: bash build.sh # Execute your build script
+      run: bash build.sh --create-dmg # Execute your build script and create DMG
 
     - name: Upload artifact
       uses: actions/upload-artifact@v4
       with:
-        name: MacVimSwitch-App # Name of the artifact zip file
-        path: dist/MacVimSwitch.app # Path to the compiled .app bundle 
+        name: MacVimSwitch-DMG # Updated artifact name
+        path: MacVimSwitch.dmg # Path to the generated DMG file 
